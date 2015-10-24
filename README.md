@@ -1,19 +1,68 @@
 # Mac Setup
 
-Filezilla
 
+## Dev
+
+Filezilla
 Apache
 MySQL
-dnsmasq
+dnsmasq : http://passingcuriosity.com/2013/dnsmasq-dev-osx/
 PHPMyAdmin
 
-Homebrew
-Node
+### Homebrew
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+#### Dev
+
+```
+brew install \
+dnsmasq \
+apache \
+mysql \
+phpmyadmin \
+memcached \
+libmemcached \
+```
+
+```
+brew install \
+git \
+node \
+```
+#### Cask apps
+
+```
+# add support for fonts
+brew tap caskroom/fonts
+
+#add dev/beta versions
+brew tap caskroom/versions
+
+brew cask install \
+alfred \
+android-file-transfer \
+appcleaner \
+cheatsheet \
+dropbox \
+google-chrome \
+google-drive \
+google-hangouts \
+flux \
+spectacle \
+sublime-text \
+vlc \
+```
+
 GIT
 Sourcetree
 SublimeText
 Atom
 Brackets
+
+## Communication
 
 Skype
 Messenger
@@ -23,14 +72,16 @@ Twitter
 
 BlueStack
 
-Photoshop
-Illustrator
-Indesign
-Lightroom
-Axure
-Freemind
-Sketch
-Omnigraffle
+## Design
+
+* Photoshop
+* Illustrator
+* Indesign
+* Lightroom
+* Axure
+* Freemind
+* Sketch : https://www.sketchapp.com/
+* Omnigraffle
 
 
 Audacity
@@ -75,5 +126,4 @@ MenuMeters
 MondoMouse
 Network Link Conditioner
 
-Inspiration https://gist.github.com/saetia/1623487
 
