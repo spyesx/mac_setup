@@ -58,14 +58,6 @@ dnsmasq : http://passingcuriosity.com/2013/dnsmasq-dev-osx/
 
 ### Homebrew
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-
-brew doctor
-```
-
 XCode
 ```
 # install
@@ -73,6 +65,14 @@ xcode-select --install
 
 # agree
 sudo xcrun cc
+```
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+
+brew doctor
 ```
 
 ```
