@@ -192,7 +192,59 @@ brew install php70 \
 #setup daemon
 ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
-````
+```
+
+### DNSMaq
+
+#### Install
+```
+# copy the default configuration file.
+cp $(brew list dnsmasq | grep /dnsmasq.conf.example$) /usr/local/etc/dnsmasq.conf
+
+# copy the daemon configuration file into place.
+sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
+
+# start Dnsmasq automatically.
+sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+```
+
+#### Configuration
+```
+vi /usr/local/etc/dnsmasq.conf
+
+address=/dev/127.0.0.1
+```
+
+#### Restart & Check
+
+```
+sudo launchctl stop homebrew.mxcl.dnsmasq
+sudo launchctl start homebrew.mxcl.dnsmasq
+
+dig testing.testing.one.two.three.dev @127.0.0.1
+```
+
+#### OSX Configuration
+
+```
+sudo mkdir -p /etc/resolver
+
+sudo tee /etc/resolver/dev >/dev/null <<EOF
+nameserver 127.0.0.1
+EOF
+```
+
+#### Tests
+
+```
+# make sure DNS are not broken.
+ping -c 1 www.google.com
+
+# check that .dev names work
+ping -c 1 foo.dev
+ping -c 1 bar.dev
+```
+
 
 ### Bluestack
 
