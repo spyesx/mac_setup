@@ -88,7 +88,7 @@ caskroom/cask/brew-cask
 ```
 brew install \
 dnsmasq \
-apache \
+php56 \
 mysql \
 phpmyadmin \
 node \
