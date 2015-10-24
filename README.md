@@ -117,7 +117,6 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 
 brew cask install \
-alfred \
 android-file-transfer \
 appcleaner \
 cheatsheet \
