@@ -54,13 +54,18 @@ flux \
 spectacle \
 sublime-text \
 vlc \
+magicprefs \
+dash \
+sourcetree \
+atom \
+brackets \
+slack \
+tunnelblick \
+
 ```
 
 GIT
-Sourcetree
-SublimeText
-Atom
-Brackets
+
 
 ## Communication
 
@@ -89,7 +94,6 @@ VirtualDJ
 
 Bitorrent
 TunnelBlick
-Dropbox
 
 
 Chrome
@@ -103,8 +107,7 @@ Renammer
 
 
 On the job
-Dash
-Flux
+
 
 
 Nitro
