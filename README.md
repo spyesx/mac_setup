@@ -76,6 +76,7 @@ sudo xcrun cc
 ```
 
 ```
+brew install \
 wget \
 ssh-copy-id \
 git \
@@ -92,7 +93,7 @@ mysql \
 phpmyadmin \
 node \
 memcached \
-libmemcached \
+libmemcached
 ```
 
 ```
@@ -137,7 +138,7 @@ audacity \
 libreoffice \
 macdown \
 unrarx \
-itweax \
+itweax
 
 ```
 
