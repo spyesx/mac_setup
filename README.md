@@ -115,8 +115,10 @@ appcleaner \
 cheatsheet \
 dropbox \
 google-chrome \
+google-chrome-canary \
 google-drive \
 google-hangouts \
+firefox \
 flux \
 spectacle \
 sublime-text \
@@ -129,6 +131,13 @@ brackets \
 slack \
 tunnelblick \
 filezilla \
+bittorrent \
+spotify \
+audacity \
+libreoffice \
+macdown \
+unrarx \
+itweax \
 
 ```
 
@@ -185,16 +194,17 @@ ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
 ````
 
+### Bluestack
+
+http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 
 ## Communication
 
-Skype
-Messenger
-WhatsApp
-Slack
-Twitter
-
-BlueStack
+* Skype : http://www.skype.com/en/download-skype/skype-for-computer/
+* Facebook Messenger : https://github.com/rsms/fb-mac-messenger
+* WhatsApp : https://github.com/stonesam92/ChitChat
+* Slack : https://slack.com/
+* Twitter : https://itunes.apple.com/en/app/twitter/id409789998?mt=12
 
 ## Design
 
@@ -207,45 +217,17 @@ BlueStack
 * Sketch : https://www.sketchapp.com/
 * Omnigraffle
 
+## Sound
 
-Audacity
-VirtualDJ
+* VirtualDJ
 
-Bitorrent
-TunnelBlick
-
-
-Chrome
-Chrome Canary
-Firefox
-
-Pocket
-Spotify
-VLC
-Renammer
-
-
-On the job
-
-
-
-Nitro
-Android File Transfert
-Clean My Mac
-iTweaX
-
-LibreOffice
-MacDown
-Macaw
-Mou
-UnRarX
-
-
-MagicPref
-Spectacle
-Smoothcursor
-MenuMeters
-MondoMouse
-Network Link Conditioner
+## Tools
+* Pocket : https://getpocket.com
+* On the job : https://stuntsoftware.com/onthejob/
+* Clean My Mac : http://macpaw.com/cleanmymac
+* MagicPref : http://magicprefs.com/
+* MenuMeters : http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
+* Nitro
+* Network Link Conditioner
 
 
