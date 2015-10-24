@@ -194,7 +194,7 @@ ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
 ```
 
-### DNSMaq
+### DNSMasq
 
 #### Install
 ```
