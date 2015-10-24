@@ -35,6 +35,10 @@ node \
 #### Cask apps
 
 ```
+brew install caskroom/cask/brew-cask
+```
+
+```
 # add support for fonts
 brew tap caskroom/fonts
 
