@@ -3,6 +3,9 @@
 ## OSX Preferences
 
 ```
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
 # Disable window animations ("new window" scale effect)
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
@@ -270,7 +273,7 @@ Include /private/etc/apache2/extra/vhost/local
 
 #### VHOSTS
 
-default
+##### default
 ```
 <VirtualHost *:80>
 
@@ -295,7 +298,7 @@ default
 
 ```
 
-dev
+##### dev
 ```
 <Virtualhost *:80>
     VirtualDocumentRoot "/Users/spyesx/www/%-2+/"
@@ -311,7 +314,7 @@ dev
 </Virtualhost>
 ```
 
-
+``sudo apachectl restart``
 
 ### DNSMasq
 
