@@ -201,6 +201,118 @@ ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
 ```
 
+### MySQL
+
+`` mysql.server start `` & ``mysql.server stop``
+
+Basic configuration to allow for large imports and a couple other miscellaneous configuration changes.
+
+```
+brew install -v mysql
+ 
+cp -v $(brew --prefix mysql)/support-files/my-default.cnf $(brew --prefix mysql)/my.cnf
+ 
+cat >> $(brew --prefix mysql)/my.cnf <<'EOF'
+# Echo & Co. changes
+max_allowed_packet = 2G
+innodb_file_per_table = 1
+EOF
+ 
+sed -i '' 's/^# \(innodb_buffer_pool_size\)/\1/' $(brew --prefix mysql)/my.cnf
+```
+
+Start MySQL using OS X's launchd and set it to start on login.
+
+```
+[ ! -d ~/Library/LaunchAgents ] && mkdir -v ~/Library/LaunchAgents
+ 
+[ -f $(brew --prefix mysql)/homebrew.mxcl.mysql.plist ] && ln -sfv $(brew --prefix mysql)/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
+ 
+[ -e ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist ] && launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+```
+
+Secure installation
+
+```
+$(brew --prefix mysql)/bin/mysql_secure_installation
+```
+
+### Apache
+
+OSX Apache config is in ``/private/etc/apache2/``.
+
+``sudo apachectl restart``
+
+```
+sudo chown -R spyesx:_www /Users/spyesx/www
+```
+
+```
+<IfModule unixd_module>
+  User spyesx
+  Group staff
+</IfModule>
+
+LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+LoadModule php5_module libexec/apache2/libphp5.so
+
+<IfModule dir_module>
+  DirectoryIndex index.html, index.php
+</IfModule>
+
+Include /private/etc/apache2/extra/httpd-autoindex.conf
+
+Include /private/etc/apache2/extra/vhost/dev
+Include /private/etc/apache2/extra/vhost/default
+Include /private/etc/apache2/extra/vhost/local
+```
+
+#### VHOSTS
+
+default
+```
+<VirtualHost *:80>
+
+  DocumentRoot /Users/spyesx/www
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  <Directory /Users/spyesx/www>
+    Options Indexes FollowSymLinks MultiViews
+	AllowOverride None
+    Order allow,deny
+    allow from all
+    Require all granted
+  </Directory>
+
+  LogLevel debug
+
+</VirtualHost>
+
+```
+
+dev
+```
+<Virtualhost *:80>
+    VirtualDocumentRoot "/Users/spyesx/www/%-2+/"
+    ServerName vhosts.dev
+    ServerAlias *.dev
+    UseCanonicalName Off
+    <Directory "/Users/spyesx/www/*">
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</Virtualhost>
+```
+
+
+
 ### DNSMasq
 
 #### Install
