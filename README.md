@@ -55,13 +55,25 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 ```
 
-## OSX Keychain
+### OSX Keychain
 
-Folder to import : ``/users/spyesx/Library/Keychains/``
+Folder to import : ``/Users/spyesx/Library/Keychains/``
 
 SCP Command
-```scp spyesx@IP_ADDRESS:/users/spyesx/Library/Keychains/ /users/spyesx/Library/```
 
+```
+scp spyesx@IP_ADDRESS:/users/spyesx/Library/Keychains/ /Users/spyesx/Library/
+```
+
+### Filezilla
+
+Folder to import : ``/Users/spyesx/.filezilla``
+
+SCP Comamnd
+
+```
+scp spyesx@IP_ADDRESS:/Users/spyesx/.filezilla/ /Users/spyesx/
+```
 
 ## Dev
 
@@ -247,6 +259,27 @@ Secure installation
 ```
 $(brew --prefix mysql)/bin/mysql_secure_installation
 ```
+
+Export/Import all databases from the old mac
+
+Export
+
+```
+cd /Users/spyesx/Desktop/
+
+mysqlcheck -u root -p --auto-repair -c --check --all-databases
+
+mysqldump -u root -p --all-databases > alldb.sql
+```
+
+Import
+
+```
+scp spyesx@IP_ADDRESS:/Users/spyesx/Desktop/alldb.sql /Users/spyesx/Desktop/
+
+mysql -u root -p < alldb.sql
+```
+
 
 ### Apache
 
