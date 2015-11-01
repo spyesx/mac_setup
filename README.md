@@ -55,6 +55,14 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 ```
 
+## OSX Keychain
+
+Folder to import : ``/users/spyesx/Library/Keychains/``
+
+SCP Command
+```scp spyesx@IP_ADDRESS:/users/spyesx/Library/Keychains/ /users/spyesx/Library/```
+
+
 ## Dev
 
 dnsmasq : http://passingcuriosity.com/2013/dnsmasq-dev-osx/
