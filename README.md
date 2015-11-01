@@ -2,7 +2,7 @@
 
 ## OSX Preferences
 
-```
+```bash
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles YES
 
@@ -61,7 +61,7 @@ Folder to import : ``/Users/spyesx/Library/Keychains/``
 
 SCP Command
 
-```
+```bash
 scp spyesx@IP_ADDRESS:/users/spyesx/Library/Keychains/ /Users/spyesx/Library/
 ```
 
@@ -71,7 +71,7 @@ Folder to import : ``/Users/spyesx/.filezilla``
 
 SCP Comamnd
 
-```
+```bash
 scp spyesx@IP_ADDRESS:/Users/spyesx/.filezilla/ /Users/spyesx/
 ```
 
@@ -82,7 +82,7 @@ dnsmasq : http://passingcuriosity.com/2013/dnsmasq-dev-osx/
 ### Homebrew
 
 XCode
-```
+```bash
 # install
 xcode-select --install
 
@@ -90,7 +90,7 @@ xcode-select --install
 sudo xcrun cc
 ```
 
-```
+```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
@@ -98,7 +98,7 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 brew doctor
 ```
 
-```
+```bash
 brew install \
 wget \
 ssh-copy-id \
@@ -108,14 +108,14 @@ caskroom/cask/brew-cask
 
 #### Web server packages
 
-```
+```bash
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 ```
 
 
-```
+```bash
 brew install \
 dnsmasq \
 php56 \
@@ -126,13 +126,13 @@ memcached \
 libmemcached
 ```
 
-```
+```bash
 brew install homebrew/php/phpmyadmin
 ```
 
 #### Cask Apps
 
-```
+```bash
 # add support for fonts
 brew tap caskroom/fonts
 
@@ -173,7 +173,7 @@ itweax
 
 ### GIT
 
-```
+```bash
 ssh-keygen -t rsa -C "nicolas.bages@weinto.com"
 
 #copy ssh key to clipboard for adding to github.com
@@ -197,13 +197,13 @@ git config --global github.token [your_token_here]
 
 ### Node
 
-```
+```bash
 npm install -g bower dploy grunt grunt-cli grunt-devtools gulp imagemin npm-check-updates vtop
 ```
 
 ### PHP
 
-```
+```bash
 #switch from SecureTransport
 brew reinstall --with-openssl curl
 
@@ -230,7 +230,7 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
 
 Basic configuration to allow for large imports and a couple other miscellaneous configuration changes.
 
-```
+```bash
 brew install -v mysql
  
 cp -v $(brew --prefix mysql)/support-files/my-default.cnf $(brew --prefix mysql)/my.cnf
@@ -246,7 +246,7 @@ sed -i '' 's/^# \(innodb_buffer_pool_size\)/\1/' $(brew --prefix mysql)/my.cnf
 
 Start MySQL using OS X's launchd and set it to start on login.
 
-```
+```bash
 [ ! -d ~/Library/LaunchAgents ] && mkdir -v ~/Library/LaunchAgents
  
 [ -f $(brew --prefix mysql)/homebrew.mxcl.mysql.plist ] && ln -sfv $(brew --prefix mysql)/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
@@ -256,7 +256,7 @@ Start MySQL using OS X's launchd and set it to start on login.
 
 Secure installation
 
-```
+```bash
 $(brew --prefix mysql)/bin/mysql_secure_installation
 ```
 
@@ -264,7 +264,7 @@ Export/Import all databases from the old mac
 
 Export
 
-```
+```bash
 cd /Users/spyesx/Desktop/
 
 mysqlcheck -u root -p --auto-repair -c --check --all-databases
@@ -274,7 +274,7 @@ mysqldump -u root -p --all-databases > alldb.sql
 
 Import
 
-```
+```bash
 scp spyesx@IP_ADDRESS:/Users/spyesx/Desktop/alldb.sql /Users/spyesx/Desktop/
 
 mysql -u root -p < alldb.sql
@@ -287,11 +287,11 @@ OSX Apache config is in ``/private/etc/apache2/``.
 
 ``sudo apachectl restart``
 
-```
+```bash
 sudo chown -R spyesx:_www /Users/spyesx/www
 ```
 
-```
+```bash
 <IfModule unixd_module>
   User spyesx
   Group staff
@@ -315,7 +315,7 @@ Include /private/etc/apache2/extra/vhost/local
 #### VHOSTS
 
 ##### default
-```
+```bash
 <VirtualHost *:80>
 
   DocumentRoot /Users/spyesx/www
@@ -323,11 +323,14 @@ Include /private/etc/apache2/extra/vhost/local
   <Directory />
     Options FollowSymLinks
     AllowOverride None
+    Order allow,deny
+    allow from all
+    Require all granted
   </Directory>
 
   <Directory /Users/spyesx/www>
     Options Indexes FollowSymLinks MultiViews
-	AllowOverride None
+    AllowOverride None
     Order allow,deny
     allow from all
     Require all granted
@@ -340,7 +343,7 @@ Include /private/etc/apache2/extra/vhost/local
 ```
 
 ##### dev
-```
+```bash
 <Virtualhost *:80>
     VirtualDocumentRoot "/Users/spyesx/www/%-2+/"
     ServerName vhosts.dev
@@ -350,7 +353,8 @@ Include /private/etc/apache2/extra/vhost/local
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order allow,deny
-        Allow from all
+    	allow from all
+	Require all granted
     </Directory>
 </Virtualhost>
 ```
@@ -360,7 +364,7 @@ Include /private/etc/apache2/extra/vhost/local
 ### DNSMasq
 
 #### Install
-```
+```bash
 # copy the default configuration file.
 cp $(brew list dnsmasq | grep /dnsmasq.conf.example$) /usr/local/etc/dnsmasq.conf
 
@@ -372,7 +376,7 @@ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 ```
 
 #### Configuration
-```
+```bash
 vi /usr/local/etc/dnsmasq.conf
 
 address=/dev/127.0.0.1
@@ -380,7 +384,7 @@ address=/dev/127.0.0.1
 
 #### Restart & Check
 
-```
+```bash
 sudo launchctl stop homebrew.mxcl.dnsmasq
 sudo launchctl start homebrew.mxcl.dnsmasq
 
@@ -389,7 +393,7 @@ dig testing.testing.one.two.three.dev @127.0.0.1
 
 #### OSX Configuration
 
-```
+```bash
 sudo mkdir -p /etc/resolver
 
 sudo tee /etc/resolver/dev >/dev/null <<EOF
@@ -399,7 +403,7 @@ EOF
 
 #### Tests
 
-```
+```bash
 # make sure DNS are not broken.
 ping -c 1 www.google.com
 
