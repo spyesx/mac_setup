@@ -447,6 +447,6 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * MagicPref : http://magicprefs.com/
 * MenuMeters : http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
 * Nitro
-* Network Link Conditioner
+* Network Link Conditioner : https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207
 
 
