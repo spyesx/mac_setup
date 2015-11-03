@@ -77,8 +77,6 @@ scp spyesx@IP_ADDRESS:/Users/spyesx/.filezilla/ /Users/spyesx/
 
 ## Dev
 
-dnsmasq : http://passingcuriosity.com/2013/dnsmasq-dev-osx/
-
 ### Homebrew
 
 XCode
