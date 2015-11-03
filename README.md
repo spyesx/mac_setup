@@ -62,7 +62,17 @@ Folder to import : ``/Users/spyesx/Library/Keychains/``
 SCP Command
 
 ```bash
-scp spyesx@IP_ADDRESS:/users/spyesx/Library/Keychains/ /Users/spyesx/Library/
+scp spyesx@IP_ADDRESS:/Users/spyesx/Library/Keychains/ /Users/spyesx/Library/
+```
+
+### OSX Wifi
+
+File to import : ``/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist``
+
+SCP Command
+
+```bash
+scp spyesx@IP_ADDRESS:/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist /Library/Preferences/SystemConfiguration/
 ```
 
 ### Filezilla
