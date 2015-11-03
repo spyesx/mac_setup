@@ -85,7 +85,7 @@ cp /Users/spyesx/Desktop/com.apple.airport.preferences.plist ./
 chowm root:wheel com.apple.airport.preferences.plist
 ```
 
-Reboot or simply relaunch Finder to use yout new settings.
+Reboot or simply relaunch Finder to use your new settings.
 
 ### Filezilla
 
