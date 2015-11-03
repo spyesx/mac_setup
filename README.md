@@ -260,9 +260,9 @@ Secure installation
 $(brew --prefix mysql)/bin/mysql_secure_installation
 ```
 
-Export/Import all databases from the old mac
+#### Export/Import all databases from the old mac
 
-Export
+##### Export
 
 ```bash
 cd /Users/spyesx/Desktop/
@@ -272,7 +272,7 @@ mysqlcheck -u root -p --auto-repair -c --check --all-databases
 mysqldump -u root -p --all-databases > alldb.sql
 ```
 
-Import
+##### Import
 
 ```bash
 scp spyesx@IP_ADDRESS:/Users/spyesx/Desktop/alldb.sql /Users/spyesx/Desktop/
