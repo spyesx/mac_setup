@@ -69,11 +69,23 @@ scp spyesx@IP_ADDRESS:/Users/spyesx/Library/Keychains/ /Users/spyesx/Library/
 
 File to import : ``/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist``
 
-SCP Command
-
 ```bash
-scp spyesx@IP_ADDRESS:/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist /Library/Preferences/SystemConfiguration/
+# Download the file
+scp spyesx@IP_ADDRESS:/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist /Users/spyesx/Desktop
+
+# Need to use root privileges
+sudo su -
+
+# Keep the old preferences just in case
+cd /Library/Preferences/SystemConfiguration
+mv com.apple.airport.preferences.plist com.apple.airport.preferences.plist-old
+
+# Install wifi settings
+cp /Users/spyesx/Desktop/com.apple.airport.preferences.plist ./
+chowm root:wheel com.apple.airport.preferences.plist
 ```
+
+Reboot or simply relaunch Finder to use yout new settings.
 
 ### Filezilla
 
