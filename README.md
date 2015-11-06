@@ -144,7 +144,9 @@ mysql \
 phpmyadmin \
 node \
 memcached \
-libmemcached
+libmemcached \
+wine \
+winetricks
 ```
 
 ```bash
@@ -188,9 +190,7 @@ audacity \
 libreoffice \
 macdown \
 unrarx \
-itweax \
-wine \
-winetricks
+itweax
 
 ```
 
