@@ -187,7 +187,9 @@ audacity \
 libreoffice \
 macdown \
 unrarx \
-itweax
+itweax \
+wine \
+winetricks
 
 ```
 
