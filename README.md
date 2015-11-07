@@ -150,6 +150,10 @@ winetricks
 ```
 
 ```bash
+winetricks directplay
+```
+
+```bash
 brew install homebrew/php/phpmyadmin
 ```
 
