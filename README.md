@@ -123,8 +123,10 @@ brew install \
 wget \
 ssh-copy-id \
 git \
-caskroom/cask/brew-cask \
-caskroom/cask/xquartz
+caskroom/cask/brew-cask
+
+brew untap caskroom/cask/
+brew install caskroom/cask/xquartz
 ```
 
 #### Web server packages
