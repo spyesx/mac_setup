@@ -227,7 +227,14 @@ git config --global github.token [your_token_here]
 ### Node
 
 ```bash
-npm install -g bower dploy grunt grunt-cli grunt-devtools gulp imagemin npm-check-updates vtop
+npm install -g bower dploy grunt grunt-cli grunt-devtools gulp imagemin npm-check-updates vtop nativefier
+```
+
+```bash
+cd ~/Desktop
+nativefier -n "Google Calendar" "https://calendar.google.com"
+nativefier -n "Google GMail" "https://mail.google.com"
+nativefier -n "Google Hangout" "https://hangouts.google.com"
 ```
 
 ### PHP
