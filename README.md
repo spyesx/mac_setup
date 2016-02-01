@@ -482,7 +482,7 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * Clean My Mac : http://macpaw.com/cleanmymac
 * MagicPref : http://magicprefs.com/
 * MenuMeters : http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
-* Nitro
+* Todoist
 * Network Link Conditioner : https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207
 
 
