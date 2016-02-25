@@ -415,7 +415,21 @@ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 ```bash
 vi /usr/local/etc/dnsmasq.conf
 
+#Google DNS
+server=8.8.8.8 
+
+#.dev
 address=/dev/127.0.0.1
+
+#Names to use from outside
+addn-hosts=/usr/local/etc/dnsmasq.hosts
+```
+
+```bash
+vi /usr/local/etc/dnsmasq.hosts
+
+xx.xx.xx.xx example.dev
+
 ```
 
 #### Restart & Check
