@@ -53,6 +53,9 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 # Enable AirDrop over Ethernet and on unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
+# Disable Chrome's two-finger back/forward navigation
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
 ```
 
 ### OSX Keychain
