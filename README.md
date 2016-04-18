@@ -501,5 +501,6 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * MenuMeters : http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
 * Todoist
 * Network Link Conditioner : https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207
+* Evernote : https://evernote.com/download/
 
 
