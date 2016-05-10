@@ -495,13 +495,14 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * VirtualDJ
 
 ## Tools
-* Pocket : https://getpocket.com
-* On the job : https://stuntsoftware.com/onthejob/
-* Clean My Mac : http://macpaw.com/cleanmymac
-* MagicPref : http://magicprefs.com/
-* MenuMeters : http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
-* Todoist
-* Network Link Conditioner : https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207
-* Evernote : https://evernote.com/download/
+* [Pocket](https://getpocket.com)
+* [On the job](https://stuntsoftware.com/onthejob/)
+* [Clean My Mac](http://macpaw.com/cleanmymac)
+* [MagicPref](http://magicprefs.com/)
+* [MenuMeters](http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/)
+* [Todoist]
+* [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
+* [Evernote](https://evernote.com/download/)
+* [Sip Color picker](http://sipapp.io/)
 
 
