@@ -472,11 +472,11 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 
 ## Communication
 
-* Skype : http://www.skype.com/en/download-skype/skype-for-computer/
-* Facebook Messenger : https://github.com/rsms/fb-mac-messenger
-* WhatsApp : https://github.com/stonesam92/ChitChat
-* Slack : https://slack.com/
-* Twitter : https://itunes.apple.com/en/app/twitter/id409789998?mt=12
+* [Skype](http://www.skype.com/en/download-skype/skype-for-computer/) 
+* [Facebook Messenger](https://github.com/rsms/fb-mac-messenger)
+* [WhatsApp](https://github.com/stonesam92/ChitChat)
+* [Slack](https://slack.com/)
+* [Twitter](https://itunes.apple.com/en/app/twitter/id409789998?mt=12)
 
 ## Design
 
@@ -486,7 +486,8 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * Lightroom
 * Axure
 * Freemind
-* Sketch : https://www.sketchapp.com/
+* [Sketch](https://www.sketchapp.com/)
+	* [Runner](http://sketchrunner.com/)
 * Omnigraffle
 
 ## Sound
