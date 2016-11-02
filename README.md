@@ -492,6 +492,7 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * Freemind
 * [Sketch](https://www.sketchapp.com/)
 	* [Runner](http://sketchrunner.com/)
+	* [Craft](https://www.invisionapp.com/craft)
 * Omnigraffle
 
 ## Sound
@@ -504,5 +505,6 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Todoist](todoist.com)
 * [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
 * [Sip Color picker](http://sipapp.io/)
+* [Teamviewer](https://www.teamviewer.com/en/download/mac/)
 
 
