@@ -126,6 +126,7 @@ brew install \
 wget \
 ssh-copy-id \
 git \
+tor \
 caskroom/cask/brew-cask
 
 brew untap caskroom/cask/
