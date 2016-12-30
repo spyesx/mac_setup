@@ -507,5 +507,6 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
 * [Sip Color picker](http://sipapp.io/)
 * [Teamviewer](https://www.teamviewer.com/en/download/mac/)
+* [Disk Inventory X](http://www.derlien.com/)
 
 
