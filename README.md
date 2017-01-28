@@ -243,6 +243,7 @@ cd ~/Desktop
 nativefier -n "Google Calendar" "https://calendar.google.com"
 nativefier -n "Google GMail" "https://mail.google.com"
 nativefier -n "Google Hangout" "https://hangouts.google.com"
+nativefier -n "Google Hangout" "https://trello.com"
 ```
 
 ### PHP
