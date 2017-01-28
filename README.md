@@ -131,6 +131,7 @@ caskroom/cask/brew-cask
 
 brew untap caskroom/cask/
 brew install caskroom/cask/xquartz
+brew install Caskroom/cask/synergy
 ```
 
 #### Web server packages
@@ -205,6 +206,7 @@ magicprefs \
 evernote \
 yujitach-menumeters \
 cleanmymac \
+synergy \
 whatsapp
 ```
 
