@@ -319,6 +319,8 @@ mysqlcheck -u root -p --auto-repair -c --check --all-databases
 mysqldump -u root -p --all-databases > alldb.sql
 ```
 
+Looking for a way to dump all databases in separate files? Check out my gist [mysql_dump_separate_files.sh](https://gist.github.com/spyesx/9a3bddece8ef65d15df7311b5a9a9e24)
+
 ##### Import
 
 ```bash
