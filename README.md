@@ -153,7 +153,8 @@ node \
 memcached \
 libmemcached \
 wine \
-winetricks
+winetricks \
+youtube-dl
 ```
 
 ```bash
