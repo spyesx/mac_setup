@@ -500,6 +500,11 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Sketch](https://www.sketchapp.com/)
 	* [Runner](http://sketchrunner.com/)
 	* [Craft](https://www.invisionapp.com/craft)
+	* [Reduce](https://flawlessapp.io/reduce)
+	* [Flinto](https://www.flinto.com)
+	* [Principle](http://principleformac.com/)
+	* [Framer](https://framer.com/)
+	* [Content generator](https://github.com/timuric/content-generator-sketch-plugin)
 * Omnigraffle
 
 ## Sound
