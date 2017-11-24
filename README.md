@@ -136,19 +136,11 @@ brew install Caskroom/cask/synergy
 
 #### Web server packages
 
-```bash
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-```
-
 
 ```bash
 brew install \
 dnsmasq \
-php56 \
 mysql \
-phpmyadmin \
 node \
 memcached \
 libmemcached \
@@ -159,10 +151,6 @@ youtube-dl
 
 ```bash
 winetricks directplay
-```
-
-```bash
-brew install homebrew/php/phpmyadmin
 ```
 
 #### Cask Apps
@@ -244,9 +232,6 @@ npm install -g bower dploy grunt grunt-cli grunt-devtools gulp imagemin npm-chec
 ```bash
 cd ~/Desktop
 nativefier -n "Google Calendar" "https://calendar.google.com"
-nativefier -n "Google GMail" "https://mail.google.com"
-nativefier -n "Google Hangout" "https://hangouts.google.com"
-nativefier -n "Google Hangout" "https://trello.com"
 ```
 
 ### PHP
@@ -256,12 +241,9 @@ nativefier -n "Google Hangout" "https://trello.com"
 brew reinstall --with-openssl curl
 
 #install php-fpm
-brew tap homebrew/dupes && \
-brew tap homebrew/versions && \
-brew tap homebrew/dupes && \
-brew install php70 \
+brew install php72 \
 --with-fpm \
---without-apache \
+--with-httpd \
 --with-mysql \
 --with-homebrew-curl \
 --with-homebrew-openssl \ 
@@ -270,6 +252,8 @@ brew install php70 \
 #setup daemon
 ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
+
+brew install phpmyadmin
 ```
 
 ### MySQL
@@ -333,23 +317,48 @@ mysql -u root -p < alldb.sql
 
 ### Apache
 
-OSX Apache config is in ``/private/etc/apache2/``.
+I don't use Apache from Apple
 
-``sudo apachectl restart``
+```bash
+sudo apachectl stop
+
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+
+brew install httpd
+
+sudo brew services start httpd
+```
+
+Config is in ``/usr/local/etc/httpd/httpd.conf``.
+
+``open -e /usr/local/etc/httpd/httpd.conf``
+
+``sudo apachectl -k restart``
 
 ```bash
 sudo chown -R spyesx:_www /Users/spyesx/www
 ```
 
 ```bash
+Listen 80
+
+DocumentRoot /Users/spyesx/www
+
+<Directory /Users/spyesx/www>
+
+AllowOverride All
+
 <IfModule unixd_module>
   User spyesx
   Group staff
 </IfModule>
 
+ServerName localhost
+
 LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
-LoadModule rewrite_module libexec/apache2/mod_rewrite.so
-LoadModule php5_module libexec/apache2/libphp5.so
+LoadModule alias_module lib/httpd/modules/mod_alias.so
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+LoadModule php7_module /usr/local/Cellar/php72/7.2.0RC6_9/libexec/apache2/libphp7.so
 
 <IfModule dir_module>
   DirectoryIndex index.html, index.php
@@ -486,7 +495,7 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Skype](http://www.skype.com/en/download-skype/skype-for-computer/) 
 * [Facebook Messenger](https://github.com/rsms/fb-mac-messenger)
 * [WhatsApp](https://github.com/stonesam92/ChitChat)
-* [Slack](https://slack.com/)
+* [Slack](https://slack.com/download)
 * [Twitter](https://itunes.apple.com/en/app/twitter/id409789998?mt=12)
 
 ## Design
@@ -519,5 +528,5 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Sip Color picker](http://sipapp.io/)
 * [Teamviewer](https://www.teamviewer.com/en/download/mac/)
 * [Disk Inventory X](http://www.derlien.com/)
-
+* [Trello](https://itunes.apple.com/app/trello/id1278508951)
 
