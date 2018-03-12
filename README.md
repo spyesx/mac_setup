@@ -570,7 +570,7 @@ mas 'Todoist', id: 585829637
 ```bash
 brew cask install osxfuse
 
-brew install homebrew/fuse/ntfs-3g
+brew install ntfs-3g
 ```
 
 ### Plugins
