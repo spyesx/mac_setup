@@ -4,8 +4,27 @@
 A bunch of preferences editable via the UI only
 
 * Keyboard > Text > Disable “Correct spelling automatically”
+
+```bash
+defaults read -g NSAutomaticSpellingCorrectionEnabled
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+```
+
 * Security and Privacy > FileVault > On (makes sure SSD is securely encrypted)
+
+```bash
+fdesetup status
+sudo fdesetup enable
+```
+
 * Security and Privacy > Firewall > On (extra security measure)
+
+```bash
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+sudo launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+```
+
 * Security and Privacy > General > App Store and identified developers
 * File Sharing > Off
 * Users & Groups > Login Items > Spectacle, Flux
