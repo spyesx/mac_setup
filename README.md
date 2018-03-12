@@ -307,7 +307,18 @@ winetricks directplay
 mas install 1295203466
 ```
 
-#### TOR
+#### Security
+
+* [Growler](https://github.com/pirate/security-growler)
+* [Keeweb](https://keeweb.info/)
+* [MacPass](https://github.com/MacPass/MacPass/releases)
+* [GPGSuite](https://gpgtools.org/gpgsuite.html)
+* [Keybase](https://keybase.io/)
+* [Muzzle](https://muzzleapp.com/)
+* [Loading](http://bonzaiapps.com/en/loading/)
+* [OverSight](https://objective-see.com/products/oversight.html)
+
+##### TOR
 
 ```bash
 brew install \
@@ -327,16 +338,19 @@ tor_and_sock_proxy.sh
 
 ```
 
-#### Security
+##### Why is my host name wrong at the Terminal prompt when connected to a public WiFi network?
 
-* [Growler](https://github.com/pirate/security-growler)
-* [Keeweb](https://keeweb.info/)
-* [MacPass](https://github.com/MacPass/MacPass/releases)
-* [GPGSuite](https://gpgtools.org/gpgsuite.html)
-* [Keybase](https://keybase.io/)
-* [Muzzle](https://muzzleapp.com/)
-* [Loading](http://bonzaiapps.com/en/loading/)
-* [OverSight](https://objective-see.com/products/oversight.html)
+Type in Terminal:
+
+`scutil --get HostName`
+
+If there's no HostName available, what you see is probably coming from the DNS or DHCP server.
+
+Set your HostName with:
+
+`sudo scutil --set HostName 'mbp-spyesx'`
+
+That should do it. In short, the Mac will pick up a host name from the DHCP server. This does not affect your computer's name as you have assigned it. This will only affect what you see at the command prompt.
 
 ## Development
 
