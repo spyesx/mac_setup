@@ -3,6 +3,13 @@
 ## OSX Preferences
 
 ```bash
+
+# Change location of screenshots
+defaults write com.apple.screencapture location ${HOME}/Pictures/_screenshots
+
+# Disable natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles YES
 
@@ -36,8 +43,9 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true && \
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true && \
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Avoid creating .DS_Store files on network volumes
+# Avoid creating .DS_Store files on network volumes and USB drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
