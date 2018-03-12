@@ -1,5 +1,15 @@
 # Mac Setup
 
+## Mac App Store
+
+```bash
+# The Mac App Store command line interface, or mas-cli, will allows to install from the App Store.
+
+brew install mas
+
+mas signin email@email.com
+```
+
 ## OSX Preferences
 
 ```bash
