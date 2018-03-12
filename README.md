@@ -17,55 +17,89 @@ sudo sh -c “softwareupdate -ia && reboot”
 ```
 The reboot will happen if the first command succeeds. If it fails the reboot won’t happen and you’ll be able to see the errors. Wraps both commands into a mini shell script, with a single sudo, so there’s no second sudo to possibly time out.
 
-## Preferences
-A bunch of preferences editable via the UI only
+## Mac App Store
 
-* Force iCloud logout
+[mas-cli](https://github.com/mas-cli/mas) is the Mac App Store Command Line Interface to install apps from the App Store.
+
+```bash
+# Install
+brew install mas
+
+# Sign in Mac App Store with an Apple ID
+mas signin email@email.com
+```
+
+## Homebrew
+
+Install XCode
+
+```bash
+# install
+xcode-select --install
+
+# agree
+sudo xcrun cc
+```
+
+Install Homebrew
+
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+
+brew update; brew upgrade; brew prune; brew cleanup; brew doctor
+```
+
+
+## macOS Preferences
+
+### Force iCloud logout
 
 ```bash
 defaults delete MobileMeAccounts
 ```
 
-* Keyboard > Text > Disable “Correct spelling automatically”
+### Disable “Correct spelling automatically”
+
+`Keyboard` ▶︎ `Text` ▶︎ `Disable “Correct spelling automatically”`
 
 ```bash
 defaults read -g NSAutomaticSpellingCorrectionEnabled
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 ```
 
-* Security and Privacy > FileVault > On (makes sure SSD is securely encrypted)
+### Enable FileVault
+
+`Security and Privacy` ▶︎ `FileVault` ▶︎ `On` (makes sure SSD is securely encrypted)
 
 ```bash
 fdesetup status
 sudo fdesetup enable
 ```
 
-* Security and Privacy > Firewall > On (extra security measure)
+### Enable firewall
+
+`Security and Privacy` ▶︎ `Firewall` ▶︎ `On`
 
 ```bash
+# Enable firewall
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+# Unload firewall
 sudo launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+
+# Load firewall
 sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 ```
 
-* Security and Privacy > General > App Store and identified developers
-* File Sharing > Off
+### UI preferences
+
+* Security and Privacy ▶︎ General ▶︎ App Store and identified developers
+* File Sharing ▶︎ Off
 * Users & Groups > Login Items > Spectacle, Flux
 
-
-## Mac App Store
-
-[mas-cli](https://github.com/mas-cli/mas)
-
-```bash
-# The Mac App Store command line interface, or mas-cli, will allows to install from the App Store.
-
-brew install mas
-
-mas signin email@email.com
-```
-
-## OSX Preferences
+### CLI preferences
 
 ```bash
 
@@ -131,7 +165,9 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
 ```
 
-### OSX Keychain
+## Backup and restore
+
+### macOS Keychain
 
 Folder to import : ``/Users/spyesx/Library/Keychains/``
 
@@ -141,7 +177,7 @@ SCP Command
 scp spyesx@IP_ADDRESS:/Users/spyesx/Library/Keychains/ /Users/spyesx/Library/
 ```
 
-### OSX Wifi
+### macOS Wifi
 
 File to import : ``/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist``
 
@@ -173,26 +209,15 @@ SCP Comamnd
 scp spyesx@IP_ADDRESS:/Users/spyesx/.filezilla/ /Users/spyesx/
 ```
 
-## Dev
-
-### Homebrew
-
-XCode
-```bash
-# install
-xcode-select --install
-
-# agree
-sudo xcrun cc
-```
+## Desktop
 
 ```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-
-brew update; brew upgrade; brew prune; brew cleanup; brew doctor
+mas 'Slack', id: 803453959
+mas 'Sip', id: 507257563 
+mas 'Todoist', id: 585829637
 ```
+
+### Install desktop CLI tools
 
 ```bash
 brew install \
@@ -205,28 +230,9 @@ caskroom/cask/brew-cask
 brew untap caskroom/cask/
 brew install caskroom/cask/xquartz
 brew install Caskroom/cask/synergy
+
 ```
-
-#### Web server packages
-
-
-```bash
-brew install \
-dnsmasq \
-mysql \
-node \
-memcached \
-libmemcached \
-wine \
-winetricks \
-youtube-dl
-```
-
-```bash
-winetricks directplay
-```
-
-#### Cask Apps
+### Install fonts & beta versions
 
 ```bash
 # add support for fonts
@@ -235,6 +241,12 @@ brew tap caskroom/fonts
 # add dev/beta versions
 brew tap caskroom/versions
 
+```
+### Install apps
+
+* [Smooth Cursor](https://smoothcursor.com/)
+
+```bash
 brew cask install \
 android-file-transfer \
 appcleaner \
@@ -242,34 +254,109 @@ cheatsheet \
 dropbox \
 google-chrome \
 google-chrome-canary \
-google-drive \
-google-hangouts \
 firefox \
 flux \
 spectacle \
 sublime-text \
 vlc \
 magicprefs \
-dash \
-sourcetree \
-atom \
-brackets \
 slack \
 tunnelblick \
-filezilla \
-bittorrent \
-spotify \
-audacity \
 libreoffice \
 macdown \
 unrarx \
-itweax \
 magicprefs \
 evernote \
-yujitach-menumeters \
+spotify \
 cleanmymac \
 synergy \
 whatsapp
+```
+
+#### Plugins
+
+```bash
+brew cask install \
+    qlcolorcode \
+    qlstephen \
+    qlmarkdown \
+    quicklook-json \
+    qlprettypatch \
+    quicklook-csv \
+    webpquicklook
+```
+
+### Install advanced tools
+
+```bash
+brew install \
+wine \
+winetricks \
+youtube-dl \
+yujitach-menumeters \
+caskroom/cask/veracrypt \
+rsync 
+```
+
+```bash
+winetricks directplay
+```
+
+```bash
+# Microsoft Remote Desktop 10
+mas install 1295203466
+```
+
+#### TOR
+
+```bash
+brew install \
+tor \
+caskroom/cask/torbrowser
+
+```
+
+Start Tor & set network proxy settings automatically. [Source](https://kremalicious.com/simple-tor-setup-on-mac-os-x/)
+
+```bash
+# See ./tor/tor_and_sock_proxy.sh
+
+chmod + x tor_and_sock_proxy.sh
+
+tor_and_sock_proxy.sh
+
+```
+
+
+
+
+## Development
+
+### Web development apps
+
+```bash
+
+brew cask install \
+dash \
+sourcetree \
+sublime-text \
+atom \
+brackets \
+filezilla \
+bittorrent \
+audacity \
+caskroom/cask/virtualbox 
+```
+
+#### Web server packages
+
+```bash
+brew install \
+dnsmasq \
+mysql \
+node \
+memcached \
+libmemcached
 ```
 
 ### GIT
@@ -299,13 +386,145 @@ git config --global github.token [your_token_here]
 ### Node
 
 ```bash
-npm install -g bower dploy grunt grunt-cli grunt-devtools gulp imagemin npm-check-updates vtop nativefier
+npm install -g bower dploy imagemin npm-check-updates vtop nativefier
 ```
 
 ```bash
 cd ~/Desktop
-nativefier -n "Google Calendar" "https://calendar.google.com"
+nativefier -n "Google Calendar" --icon "./google-calendar.png" "https://calendar.google.com"
+nativefier -n "Google Keep" --icon "./google-keep.png" "https://keep.google.com"
+nativefier -n "Time is" --icon "./time-is.png" "https://time.is/compare"
 ```
+
+### Apache
+
+I don't use Apache from Apple
+
+```bash
+sudo apachectl stop
+
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+
+brew install httpd
+
+sudo brew services start httpd
+```
+
+#### Troubleshooting
+
+```bash
+# Check to ensure the server is up
+ps -aef | grep httpd
+
+# Restart Apache
+sudo apachectl -k restart
+
+# Read logs
+tail -f /usr/local/var/log/httpd/error_log
+
+```
+
+Use `apachectl` command to control Apache:
+
+```bash
+$ sudo apachectl start
+$ sudo apachectl stop
+$ sudo apachectl -k restart
+```
+
+#### Configuration
+
+Config is in ``/usr/local/etc/httpd/httpd.conf``.
+
+``open -e /usr/local/etc/httpd/httpd.conf``
+
+```bash
+Listen 80
+
+DocumentRoot /Users/spyesx/www
+
+<Directory /Users/spyesx/www>
+
+AllowOverride All
+
+<IfModule unixd_module>
+  User spyesx
+  Group staff
+</IfModule>
+
+ServerName localhost
+
+LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
+LoadModule alias_module lib/httpd/modules/mod_alias.so
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+LoadModule php7_module /usr/local/Cellar/php72/7.2.0RC6_9/libexec/apache2/libphp7.so
+
+<IfModule dir_module>
+  DirectoryIndex index.html, index.php
+</IfModule>
+
+Include /private/etc/apache2/extra/httpd-autoindex.conf
+
+Include /private/etc/apache2/extra/vhost/dev
+Include /private/etc/apache2/extra/vhost/default
+Include /private/etc/apache2/extra/vhost/local
+```
+
+``sudo apachectl -k restart``
+
+```bash
+sudo chown -R spyesx:_www /Users/spyesx/www
+```
+
+#### VHOSTS
+
+##### default
+```bash
+<VirtualHost *:80>
+
+  DocumentRoot /Users/spyesx/www
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    allow from all
+    Require all granted
+  </Directory>
+
+  <Directory /Users/spyesx/www>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    allow from all
+    Require all granted
+  </Directory>
+
+  LogLevel debug
+
+</VirtualHost>
+
+```
+
+##### .localdev
+```bash
+<Virtualhost *:80>
+    VirtualDocumentRoot "/Users/spyesx/www/%-2+/"
+    ServerName vhosts.localdev
+    ServerAlias *.localdev
+    UseCanonicalName Off
+    <Directory "/Users/spyesx/www/*">
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+    	allow from all
+	Require all granted
+    </Directory>
+</Virtualhost>
+```
+
+``sudo apachectl -k restart``
+
 
 ### PHP
 
@@ -387,112 +606,6 @@ scp spyesx@IP_ADDRESS:/Users/spyesx/Desktop/alldb.sql /Users/spyesx/Desktop/
 mysql -u root -p < alldb.sql
 ```
 
-
-### Apache
-
-I don't use Apache from Apple
-
-```bash
-sudo apachectl stop
-
-sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
-
-brew install httpd
-
-sudo brew services start httpd
-```
-
-Config is in ``/usr/local/etc/httpd/httpd.conf``.
-
-``open -e /usr/local/etc/httpd/httpd.conf``
-
-``sudo apachectl -k restart``
-
-```bash
-sudo chown -R spyesx:_www /Users/spyesx/www
-```
-
-```bash
-Listen 80
-
-DocumentRoot /Users/spyesx/www
-
-<Directory /Users/spyesx/www>
-
-AllowOverride All
-
-<IfModule unixd_module>
-  User spyesx
-  Group staff
-</IfModule>
-
-ServerName localhost
-
-LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
-LoadModule alias_module lib/httpd/modules/mod_alias.so
-LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
-LoadModule php7_module /usr/local/Cellar/php72/7.2.0RC6_9/libexec/apache2/libphp7.so
-
-<IfModule dir_module>
-  DirectoryIndex index.html, index.php
-</IfModule>
-
-Include /private/etc/apache2/extra/httpd-autoindex.conf
-
-Include /private/etc/apache2/extra/vhost/dev
-Include /private/etc/apache2/extra/vhost/default
-Include /private/etc/apache2/extra/vhost/local
-```
-
-#### VHOSTS
-
-##### default
-```bash
-<VirtualHost *:80>
-
-  DocumentRoot /Users/spyesx/www
-
-  <Directory />
-    Options FollowSymLinks
-    AllowOverride None
-    Order allow,deny
-    allow from all
-    Require all granted
-  </Directory>
-
-  <Directory /Users/spyesx/www>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride None
-    Order allow,deny
-    allow from all
-    Require all granted
-  </Directory>
-
-  LogLevel debug
-
-</VirtualHost>
-
-```
-
-##### dev
-```bash
-<Virtualhost *:80>
-    VirtualDocumentRoot "/Users/spyesx/www/%-2+/"
-    ServerName vhosts.localdev
-    ServerAlias *.dev
-    UseCanonicalName Off
-    <Directory "/Users/spyesx/www/*">
-        Options Indexes FollowSymLinks MultiViews
-        AllowOverride All
-        Order allow,deny
-    	allow from all
-	Require all granted
-    </Directory>
-</Virtualhost>
-```
-
-``sudo apachectl restart``
-
 ### DNSMasq
 
 #### Install
@@ -524,7 +637,7 @@ addn-hosts=/usr/local/etc/dnsmasq.hosts
 ```bash
 vi /usr/local/etc/dnsmasq.hosts
 
-xx.xx.xx.xx example.dev
+xx.xx.xx.xx example.localdev
 
 ```
 
@@ -537,7 +650,7 @@ sudo launchctl start homebrew.mxcl.dnsmasq
 dig testing.testing.one.two.three.dev @127.0.0.1
 ```
 
-#### OSX Configuration
+#### macOS Configuration
 
 ```bash
 sudo mkdir -p /etc/resolver
@@ -565,11 +678,28 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 
 ## Communication
 
-* [Skype](http://www.skype.com/en/download-skype/skype-for-computer/) 
+* [Signal](https://signal.org/download/)
 * [Facebook Messenger](https://github.com/rsms/fb-mac-messenger)
 * [WhatsApp](https://github.com/stonesam92/ChitChat)
+* [Skype](http://www.skype.com/en/download-skype/skype-for-computer/)
+
+```bash
+brew install caskroom/cask/skype
+```
+
 * [Slack](https://slack.com/download)
+
+```bash
+brew install caskroom/cask/slack
+```
+
 * [Twitter](https://itunes.apple.com/en/app/twitter/id409789998?mt=12)
+
+```bash
+# Install Twitter
+mas install 409789998
+```
+
 
 ## Design
 
@@ -593,23 +723,37 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 
 * [VirtualDJ](http://www.virtualdj.com/)
 
-## Tools
-* [Pocket](https://getpocket.com)
-* [On the job](https://stuntsoftware.com/onthejob/)
-* [Todoist](todoist.com)
+## Productivity
+
 * [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
 * [Sip Color picker](http://sipapp.io/)
 * [Teamviewer](https://www.teamviewer.com/en/download/mac/)
 * [Disk Inventory X](http://www.derlien.com/)
+* [On the job](https://stuntsoftware.com/onthejob/)
+* [Pocket](https://getpocket.com)
+
+```bash
+# Install Pocket
+mas install 568494494
+```
+
+* [Todoist](todoist.com)
+
+```bash
+# Install Todoist
+mas install 585829637
+```
+
 * [Trello](https://itunes.apple.com/app/trello/id1278508951)
 
 ```bash
-mas 'Slack', id: 803453959
-mas 'Sip', id: 507257563 
-mas 'Todoist', id: 585829637
+# Install Trello
+mas install 1278508951
 ```
 
-### FS
+
+
+### FS drivers
 
 ```bash
 brew cask install osxfuse
@@ -617,15 +761,4 @@ brew cask install osxfuse
 brew install ntfs-3g
 ```
 
-### Plugins
 
-```bash
-brew cask install \
-    qlcolorcode \
-    qlstephen \
-    qlmarkdown \
-    quicklook-json \
-    qlprettypatch \
-    quicklook-csv \
-    webpquicklook
-```
