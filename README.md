@@ -13,6 +13,8 @@ A bunch of preferences editable via the UI only
 
 ## Mac App Store
 
+[mas-cli](https://github.com/mas-cli/mas)
+
 ```bash
 # The Mac App Store command line interface, or mas-cli, will allows to install from the App Store.
 
