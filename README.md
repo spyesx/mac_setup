@@ -136,7 +136,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 
-brew doctor
+brew update; brew upgrade; brew prune; brew cleanup; brew doctor
 ```
 
 ```bash
@@ -547,4 +547,10 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Teamviewer](https://www.teamviewer.com/en/download/mac/)
 * [Disk Inventory X](http://www.derlien.com/)
 * [Trello](https://itunes.apple.com/app/trello/id1278508951)
+
+```bash
+mas 'Slack', id: 803453959
+mas 'Sip', id: 507257563 
+mas 'Todoist', id: 585829637
+```
 
