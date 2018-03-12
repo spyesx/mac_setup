@@ -1,5 +1,16 @@
 # Mac Setup
 
+## Preferences
+A bunch of preferences editable via the UI only
+
+* Keyboard > Text > Disable “Correct spelling automatically”
+* Security and Privacy > FileVault > On (makes sure SSD is securely encrypted)
+* Security and Privacy > Firewall > On (extra security measure)
+* Security and Privacy > General > App Store and identified developers
+* File Sharing > Off
+* Users & Groups > Login Items > Spectacle, Flux
+
+
 ## Mac App Store
 
 ```bash
@@ -423,7 +434,7 @@ Include /private/etc/apache2/extra/vhost/local
 ```bash
 <Virtualhost *:80>
     VirtualDocumentRoot "/Users/spyesx/www/%-2+/"
-    ServerName vhosts.dev
+    ServerName vhosts.localdev
     ServerAlias *.dev
     UseCanonicalName Off
     <Directory "/Users/spyesx/www/*">
@@ -459,8 +470,8 @@ vi /usr/local/etc/dnsmasq.conf
 #Google DNS
 server=8.8.8.8 
 
-#.dev
-address=/dev/127.0.0.1
+#.localdev
+address=/localdev/127.0.0.1
 
 #Names to use from outside
 addn-hosts=/usr/local/etc/dnsmasq.hosts
@@ -554,3 +565,25 @@ mas 'Sip', id: 507257563
 mas 'Todoist', id: 585829637
 ```
 
+### FS
+
+```bash
+brew cask install osxfuse
+
+brew install homebrew/fuse/ntfs-3g
+```
+
+### Plugins
+
+```bash
+brew cask install \
+    qlcolorcode \
+    qlstephen \
+    qlmarkdown \
+    quicklook-json \
+    qlprettypatch \
+    quicklook-csv \
+    betterzipql \
+    webpquicklook \
+    suspicious-package
+```
