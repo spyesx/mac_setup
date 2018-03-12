@@ -1,5 +1,15 @@
 # Mac Setup
 
+## SSH
+
+```bash
+# Check SSH status
+sudo systemsetup -getremotelogin
+
+# Enable SSH
+sudo systemsetup -setremotelogin on
+```
+
 ## macOS upgrade
 
 ```bash
