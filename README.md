@@ -1,5 +1,12 @@
 # Mac Setup
 
+## macOS upgrade
+
+```bash
+sudo sh -c “softwareupdate -ia && reboot”
+```
+The reboot will happen if the first command succeeds. If it fails the reboot won’t happen and you’ll be able to see the errors. Wraps both commands into a mini shell script, with a single sudo, so there’s no second sudo to possibly time out.
+
 ## Preferences
 A bunch of preferences editable via the UI only
 
