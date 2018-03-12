@@ -20,6 +20,12 @@ The reboot will happen if the first command succeeds. If it fails the reboot won
 ## Preferences
 A bunch of preferences editable via the UI only
 
+* Force iCloud logout
+
+```bash
+defaults delete MobileMeAccounts
+```
+
 * Keyboard > Text > Disable “Correct spelling automatically”
 
 ```bash
