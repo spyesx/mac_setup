@@ -877,6 +877,52 @@ spoof set 00:00:00:00:00:00 wi-fi
 spoof reset wi-fi
 ```
 
+### Screen
+
+Share a terminal session with another user: [Source](http://wiki.networksecuritytoolkit.org/index.php/HowTo_Share_A_Terminal_Session_Using_Screen)
+
+Sets up a shared screen session named shared
+
+```
+screen -d -m -S shared
+```
+Shows what screen sessions you currently have running
+
+```
+screen -ls
+```
+
+Attach to a existing screen session named shared
+
+```
+screen -x shared
+```
+
+Detach a screen `ctrl+a` `d`
+
+Kill a screen `ctrl+a` `k`
+
+Share a screen with another user
+
+```
+# Reattach a session and if necessary detach it first
+screen -r shared
+
+# Allow multiuser
+ctrl+a :multiuser on
+
+# Add a user
+ctrl+a :acladd user2
+
+```
+
+Attach to a multiuser shared screen
+
+```
+screen -x user1/shared
+```
+
+
 ## Security
 
 Lock Screen
