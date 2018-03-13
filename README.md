@@ -8,6 +8,11 @@ sudo systemsetup -getremotelogin
 
 # Enable SSH
 sudo systemsetup -setremotelogin on
+
+# Show external IP
+dig +short myip.opendns.com @resolver1.opendns.com
+curl -s https://api.ipify.org && echo
+curl ifconfig.me
 ```
 
 ## macOS upgrade
@@ -103,8 +108,16 @@ sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 
 ```bash
 
+# Set audio volume
+osascript -e 'set volume 4'
+
+# Disable Sudden Motion Sensor. (Why would we keep it on a SSD?)
+sudo pmset -a sms 0
+
 # Change location of screenshots
+mkdir ${HOME}/Pictures/_screenshots
 defaults write com.apple.screencapture location ${HOME}/Pictures/_screenshots
+killall SystemUIServer
 
 # Disable natural scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -364,7 +377,12 @@ If there's no HostName available, what you see is probably coming from the DNS o
 
 Set your HostName with:
 
-`sudo scutil --set HostName 'mbp-spyesx'`
+```
+sudo scutil --set ComputerName "mbp-spyesx" && \
+sudo scutil --set HostName "mbp-spyesx" && \
+sudo scutil --set LocalHostName "mbp-spyesx" && \
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "mbp-spyesx"
+```
 
 That should do it. In short, the Mac will pick up a host name from the DHCP server. This does not affect your computer's name as you have assigned it. This will only affect what you see at the command prompt.
 
@@ -797,6 +815,138 @@ mas install 1278508951
 brew cask install osxfuse
 
 brew install ntfs-3g
+```
+
+
+## Network
+
+### Wifi
+
+Turn on Wi-Fi Adapter
+
+```bash
+networksetup -setairportpower en0 on
+```
+
+Scan Available Access Points
+
+```bash
+sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+
+airport -s
+```
+
+Join a Wi-Fi Network
+
+```bash
+networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
+```
+
+Show current SSID
+
+```bash
+airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
+```
+
+Get local IP address
+
+```bash
+ifconfig en0 | grep inet
+```
+Set local IP addresses
+
+```bash
+sudo ipconfig set en0 DHCP
+
+sudo ifconfig en0 [IP] netmask [MASK]
+
+sudo route add default gw [GW] eth0
+
+networksetup -setdnsservers en0 [dns1] [dns2]
+```
+
+
+### MAC Spoof
+
+```bash
+# Source : https://github.com/feross/spoof
+npm install spoof -g
+
+spoof list
+spoof list --wifi
+
+spoof randomize wi-fi
+spoof set 00:00:00:00:00:00 wi-fi
+
+spoof reset wi-fi
+```
+
+## Security
+
+Lock Screen
+
+```bash
+/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+```
+
+Securely Remove File & Folder
+
+```bash
+srm /path/to/file
+srm -r /path/to/folder/
+```
+
+## System
+
+Compare Two Folders
+
+```bash
+diff -qr /path/to/folder1 /path/to/folder2
+```
+
+Copy data to Clipboard
+
+```bash
+cat whatever.txt | pbcopy
+```
+
+Copy data from Clipboard
+
+```bash
+pbpaste > whatever.txt
+```
+
+Set Login Window Text
+
+```bash
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your text"
+```
+
+Purge memory cache
+
+```bash
+sudo purge
+```
+
+Notification Center Service
+
+```bash
+#Disable
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
+killall -9 NotificationCenter
+
+#Enable (Default)
+launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+```
+
+Root User
+
+```bash
+#Enable
+dsenableroot
+
+#Disable
+dsenableroot -d
 ```
 
 
