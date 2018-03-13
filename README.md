@@ -275,6 +275,16 @@ whatsapp
 
 #### Plugins
 
+Quick look plugins
+
+* [QLColorCode](https://github.com/n8gray/QLColorCode)
+* [qlstephen](https://github.com/whomwah/qlstephen)
+* [qlmarkdown](https://github.com/toland/qlmarkdown)
+* [quicklook-json](http://www.sagtau.com/quicklookjson.html)
+* [qlprettypatch](https://github.com/atnan/QLPrettyPatch)
+* [quicklook-csv](https://github.com/p2/quicklook-csv)
+* [webpquicklook](https://github.com/dchest/webp-quicklook)
+
 ```bash
 brew cask install \
     qlcolorcode \
@@ -284,6 +294,12 @@ brew cask install \
     qlprettypatch \
     quicklook-csv \
     webpquicklook
+```
+
+Restart QuickLook if needed
+
+```bash
+qlmanage -r
 ```
 
 ### Install advanced tools
