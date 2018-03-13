@@ -22,18 +22,6 @@ sudo sh -c “softwareupdate -ia && reboot”
 ```
 The reboot will happen if the first command succeeds. If it fails the reboot won’t happen and you’ll be able to see the errors. Wraps both commands into a mini shell script, with a single sudo, so there’s no second sudo to possibly time out.
 
-## Mac App Store
-
-[mas-cli](https://github.com/mas-cli/mas) is the Mac App Store Command Line Interface to install apps from the App Store.
-
-```bash
-# Install
-brew install mas
-
-# Sign in Mac App Store with an Apple ID
-mas signin email@email.com
-```
-
 ## Homebrew
 
 Install XCode
@@ -56,6 +44,17 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 brew update; brew upgrade; brew prune; brew cleanup; brew doctor
 ```
 
+## Mac App Store
+
+[mas-cli](https://github.com/mas-cli/mas) is the Mac App Store Command Line Interface to install apps from the App Store.
+
+```bash
+# Install
+brew install mas
+
+# Sign in Mac App Store with an Apple ID
+mas signin email@email.com
+```
 
 ## macOS Preferences
 
@@ -224,12 +223,6 @@ scp spyesx@IP_ADDRESS:/Users/spyesx/.filezilla/ /Users/spyesx/
 
 ## Desktop
 
-```bash
-mas 'Slack', id: 803453959
-mas 'Sip', id: 507257563 
-mas 'Todoist', id: 585829637
-```
-
 ### Install desktop CLI tools
 
 ```bash
@@ -391,7 +384,6 @@ That should do it. In short, the Mac will pick up a host name from the DHCP serv
 ### Web development apps
 
 ```bash
-
 brew cask install \
 dash \
 sourcetree \
@@ -402,6 +394,11 @@ filezilla \
 bittorrent \
 audacity \
 caskroom/cask/virtualbox 
+```
+
+```bash
+# Install Sip
+mas install 507257563
 ```
 
 #### Web server packages
@@ -755,7 +752,6 @@ brew install caskroom/cask/slack
 # Install Twitter
 mas install 409789998
 ```
-
 
 ## Design
 
