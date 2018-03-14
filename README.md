@@ -608,6 +608,7 @@ brew install phpmyadmin
 Basic configuration to allow for large imports and a couple other miscellaneous configuration changes.
 
 ```bash
+brew cask install sequel-pro
 brew install -v mysql
  
 cp -v $(brew --prefix mysql)/support-files/my-default.cnf $(brew --prefix mysql)/my.cnf
