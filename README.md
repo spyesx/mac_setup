@@ -817,6 +817,18 @@ brew install ntfs-3g
 
 ## Network
 
+### nmap
+
+Scan local network
+
+```bash
+brew install nmap
+
+# Show which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255
+# use sudo to get MAC addresses
+nmap -sn 192.168.1.0/24
+```
+
 ### Wifi
 
 Turn on Wi-Fi Adapter
