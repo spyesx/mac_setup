@@ -935,6 +935,17 @@ Attach to a multiuser shared screen
 screen -x user1/shared
 ```
 
+### SSHFS
+
+```
+brew install sshfs
+```
+
+```
+mkdir -p ~/mount/[VOLUME_NAME]
+
+sshfs user@host:/path/to/open/ ~/mount/[VOLUME_NAME] -ovolname=VOLUME_NAME
+```
 
 ## Security
 
