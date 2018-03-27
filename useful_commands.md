@@ -205,11 +205,11 @@ dsenableroot -d
 
 Total awesomeness! List all the commands you could run.
 
-```
+```bash
 compgen -ac | grep cat
 ```
 
-```
+```bash
 # will list all the commands you could run.
 compgen -c
 
