@@ -152,6 +152,12 @@ srm -r /path/to/folder/
 
 ## System
 
+Current folder elements sizes
+
+```
+du -sh -- * .*
+```
+
 Compare Two Folders
 
 ```bash
