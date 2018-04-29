@@ -152,6 +152,13 @@ srm -r /path/to/folder/
 
 ## System
 
+
+Current folder elements sizes
+
+```
+du -sh -- * .*
+```
+
 Compare Two Folders
 
 ```bash
@@ -164,7 +171,7 @@ Copy data to Clipboard
 cat whatever.txt | pbcopy
 ```
 
-Copy data from Clipboard
+Write data from Clipboard
 
 ```bash
 pbpaste > whatever.txt
