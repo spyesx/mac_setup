@@ -7,7 +7,6 @@ brew install \
 wget \
 ssh-copy-id \
 git \
-tor \
 caskroom/cask/brew-cask
 
 brew untap caskroom/cask/
@@ -117,41 +116,83 @@ mas install 1295203466
 * [Loading](http://bonzaiapps.com/en/loading/)
 * [OverSight](https://objective-see.com/products/oversight.html)
 
-##### TOR
+
+
+
+### Bluestack
+
+http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
+
+## Communication
+
+* [Signal](https://signal.org/download/)
+* [Facebook Messenger](https://github.com/rsms/fb-mac-messenger)
+* [WhatsApp](https://github.com/stonesam92/ChitChat)
+* [Skype](http://www.skype.com/en/download-skype/skype-for-computer/)
 
 ```bash
-brew install \
-tor \
-caskroom/cask/torbrowser
-
+brew install caskroom/cask/skype
 ```
 
-Start Tor & set network proxy settings automatically. [Source](https://kremalicious.com/simple-tor-setup-on-mac-os-x/)
+* [Slack](https://slack.com/download)
 
 ```bash
-# See ./tor/tor_and_sock_proxy.sh
-
-chmod + x tor_and_sock_proxy.sh
-
-tor_and_sock_proxy.sh
-
+brew install caskroom/cask/slack
 ```
 
-##### Why is my host name wrong at the Terminal prompt when connected to a public WiFi network?
+* [Twitter](https://itunes.apple.com/en/app/twitter/id409789998?mt=12)
 
-Type in Terminal:
-
-`scutil --get HostName`
-
-If there's no HostName available, what you see is probably coming from the DNS or DHCP server.
-
-Set your HostName with:
-
-```
-sudo scutil --set ComputerName "mbp-spyesx" && \
-sudo scutil --set HostName "mbp-spyesx" && \
-sudo scutil --set LocalHostName "mbp-spyesx" && \
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "mbp-spyesx"
+```bash
+# Install Twitter
+mas install 409789998
 ```
 
-That should do it. In short, the Mac will pick up a host name from the DHCP server. This does not affect your computer's name as you have assigned it. This will only affect what you see at the command prompt.
+## Design
+
+* Photoshop
+* Illustrator
+* Indesign
+* Lightroom
+* Axure
+* Freemind
+* [Sketch](https://www.sketchapp.com/)
+	* [Runner](http://sketchrunner.com/)
+	* [Craft](https://www.invisionapp.com/craft)
+	* [Reduce](https://flawlessapp.io/reduce)
+	* [Flinto](https://www.flinto.com)
+	* [Principle](http://principleformac.com/)
+	* [Framer](https://framer.com/)
+	* [Content generator](https://github.com/timuric/content-generator-sketch-plugin)
+* Omnigraffle
+
+## Sound
+
+* [VirtualDJ](http://www.virtualdj.com/)
+
+## Productivity
+
+* [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
+* [Sip Color picker](http://sipapp.io/)
+* [Teamviewer](https://www.teamviewer.com/en/download/mac/)
+* [Disk Inventory X](http://www.derlien.com/)
+* [On the job](https://stuntsoftware.com/onthejob/)
+* [Pocket](https://getpocket.com)
+
+```bash
+# Install Pocket
+mas install 568494494
+```
+
+* [Todoist](todoist.com)
+
+```bash
+# Install Todoist
+mas install 585829637
+```
+
+* [Trello](https://itunes.apple.com/app/trello/id1278508951)
+
+```bash
+# Install Trello
+mas install 1278508951
+```
