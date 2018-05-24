@@ -13,6 +13,28 @@ curl -s https://api.ipify.org && echo
 curl ifconfig.me
 ```
 
+## Disable sleep
+
+Sometimes, it can be usefull to disable sleep mode. Especially if you're working on a Mac through SSH.
+
+Turn Off System Sleep
+
+```bash
+sudo systemsetup -setcomputersleep Never
+```
+
+Set system idle time.
+
+```bash
+sudo systemsetup -setcomputersleep 60
+```
+
+Get sleep status.
+
+```bash
+sudo systemsetup -getcomputersleep
+```
+
 ## macOS upgrade
 
 The reboot will happen if the first command succeeds. If it fails the reboot won’t happen and you’ll be able to see the errors. Wraps both commands into a mini shell script, with a single sudo, so there’s no second sudo to possibly time out.
