@@ -1,78 +1,34 @@
 # Useful commands
 
-## Network
 
-### nmap
+### System load
 
-Scan local network
-
-```bash
-brew install nmap
-
-# Show which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255
-# use sudo to get MAC addresses
-nmap -sn 192.168.1.0/24
-```
-
-### Wifi
-
-Turn on Wi-Fi Adapter
+Brut loadaverage
 
 ```bash
-networksetup -setairportpower en0 on
+cat /proc/loadavg
+
+# 0.29 0.77 5.75 1/214 27286
 ```
 
-Scan Available Access Points
+Show who is logged on and what they are doing
 
 ```bash
-sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+w
 
-airport -s
+# 16:52:57 up 6 days,  9:35,  3 users,  load average: 0,44, 0,84, 5,97
+# USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 ```
 
-Join a Wi-Fi Network
+Virtual memory statistics
 
 ```bash
-networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
+vmstat 1
+
+# procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+# r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
 ```
 
-Show current SSID
-
-```bash
-airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
-```
-
-Get local IP address
-
-```bash
-ifconfig en0 | grep inet
-```
-Set local IP addresses
-
-```bash
-sudo ipconfig set en0 DHCP
-
-sudo ifconfig en0 [IP] netmask [MASK]
-
-sudo route add default gw [GW] eth0
-
-networksetup -setdnsservers en0 [dns1] [dns2]
-```
-
-### MAC Spoof
-
-```bash
-# Source : https://github.com/feross/spoof
-npm install spoof -g
-
-spoof list
-spoof list --wifi
-
-spoof randomize wi-fi
-spoof set 00:00:00:00:00:00 wi-fi
-
-spoof reset wi-fi
-```
 
 ### Screen
 
@@ -119,21 +75,6 @@ Attach to a multiuser shared screen
 screen -x user1/shared
 ```
 
-### SSHFS
-
-Install SSHFS if it's not.
-
-```
-brew install sshfs
-```
-
-Mount a volume in a folder you've created.
-
-```
-mkdir -p ~/mount/[VOLUME_NAME]
-
-sshfs user@host:/path/to/open/ ~/mount/[VOLUME_NAME] -ovolname=VOLUME_NAME
-```
 
 ## Security
 
@@ -151,6 +92,7 @@ srm -r /path/to/folder/
 ```
 
 ## System
+
 
 Current folder elements sizes
 
@@ -170,7 +112,7 @@ Copy data to Clipboard
 cat whatever.txt | pbcopy
 ```
 
-Copy data from Clipboard
+Write data from Clipboard
 
 ```bash
 pbpaste > whatever.txt
