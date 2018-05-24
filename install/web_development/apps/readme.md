@@ -1,7 +1,7 @@
 
-## Development
+# Development apps
 
-### Web development apps
+## Installation
 
 ```bash
 brew cask install \
@@ -16,7 +16,10 @@ audacity \
 caskroom/cask/virtualbox 
 ```
 
+[Sip Color picker](http://sipapp.io/)
+
 ```bash
 # Install Sip
 mas install 507257563
 ```
+

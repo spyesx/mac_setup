@@ -1,6 +1,34 @@
 # Useful commands
 
 
+### System load
+
+Brut loadaverage
+
+```bash
+cat /proc/loadavg
+
+# 0.29 0.77 5.75 1/214 27286
+```
+
+Show who is logged on and what they are doing
+
+```bash
+w
+
+# 16:52:57 up 6 days,  9:35,  3 users,  load average: 0,44, 0,84, 5,97
+# USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+```
+
+Virtual memory statistics
+
+```bash
+vmstat 1
+
+# procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+# r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+```
+
 
 ### Screen
 

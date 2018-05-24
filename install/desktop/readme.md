@@ -1,11 +1,10 @@
-## Desktop
+# Desktop
 
-### Install desktop CLI tools
+## Install desktop CLI tools
 
 ```bash
 brew install \
 wget \
-ssh-copy-id \
 git \
 caskroom/cask/brew-cask
 
@@ -24,7 +23,7 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 
 ```
-### Install apps
+## Install apps
 
 * [Smooth Cursor](https://smoothcursor.com/)
 
@@ -39,7 +38,6 @@ google-chrome-canary \
 firefox \
 flux \
 spectacle \
-sublime-text \
 vlc \
 magicprefs \
 slack \
@@ -55,7 +53,7 @@ synergy \
 whatsapp
 ```
 
-#### Plugins
+## Plugins
 
 Quick look plugins
 
@@ -105,20 +103,6 @@ winetricks directplay
 mas install 1295203466
 ```
 
-#### Security
-
-* [Growler](https://github.com/pirate/security-growler)
-* [Keeweb](https://keeweb.info/)
-* [MacPass](https://github.com/MacPass/MacPass/releases)
-* [GPGSuite](https://gpgtools.org/gpgsuite.html)
-* [Keybase](https://keybase.io/)
-* [Muzzle](https://muzzleapp.com/)
-* [Loading](http://bonzaiapps.com/en/loading/)
-* [OverSight](https://objective-see.com/products/oversight.html)
-
-
-
-
 ### Bluestack
 
 http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
@@ -131,12 +115,14 @@ http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
 * [Skype](http://www.skype.com/en/download-skype/skype-for-computer/)
 
 ```bash
+# Install Skype
 brew install caskroom/cask/skype
 ```
 
 * [Slack](https://slack.com/download)
 
 ```bash
+# Install Slack
 brew install caskroom/cask/slack
 ```
 
@@ -172,7 +158,6 @@ mas install 409789998
 ## Productivity
 
 * [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
-* [Sip Color picker](http://sipapp.io/)
 * [Teamviewer](https://www.teamviewer.com/en/download/mac/)
 * [Disk Inventory X](http://www.derlien.com/)
 * [On the job](https://stuntsoftware.com/onthejob/)
@@ -195,4 +180,20 @@ mas install 585829637
 ```bash
 # Install Trello
 mas install 1278508951
+```
+
+## Create local apps for websites
+
+Node and [Nativefier](https://github.com/jiahaog/nativefier) are required.
+
+```bash
+brew install node
+npm install nativefier -g
+```
+
+```bash
+cd ~/Downloads
+nativefier -n "Google Calendar" --icon "./nativefier/google-calendar.png" "https://calendar.google.com"
+nativefier -n "Google Keep" --icon "./nativefier/google-keep.png" "https://keep.google.com"
+nativefier -n "Time is" --icon "./nativefier/time.is.png" "https://time.is/compare"
 ```

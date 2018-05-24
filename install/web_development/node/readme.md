@@ -1,22 +1,14 @@
 
-## Development
+# Node
 
-### Web development apps
+## Install
 
 ```bash
-brew cask install \
-dash \
-sourcetree \
-sublime-text \
-atom \
-brackets \
-filezilla \
-bittorrent \
-audacity \
-caskroom/cask/virtualbox 
+brew install node
 ```
 
+## Development tools based on node
+
 ```bash
-# Install Sip
-mas install 507257563
+npm install -g bower yarn imagemin npm-check-updates vtop nativefier
 ```

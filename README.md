@@ -7,5 +7,6 @@ Feel free to fork it and push your improvements especially if you know how to ge
 
 1. [Common](common/readme.md)
 2. [Desktop](desktop/readme.md)
+2. [Security & Privacy](security_privacy/readme.md)
 3. [Web Development](web_development/readme.md)
 3. [System Administration](system_administration/readme.md)

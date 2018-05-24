@@ -13,8 +13,8 @@ Start Tor & set network proxy settings automatically.
 ```bash
 # See ./tor/tor_and_sock_proxy.sh
 
-chmod + x tor_and_sock_proxy.sh
+chmod + x ./tor/tor_and_sock_proxy.sh
 
-tor_and_sock_proxy.sh
+./tor/tor_and_sock_proxy.sh
 
 ```

@@ -83,5 +83,3 @@ Example for your VHOST configuration. Note the location of all files.
 </Virtualhost>
 
 ```
-
-

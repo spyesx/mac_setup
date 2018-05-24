@@ -1,6 +1,6 @@
-## Network
+# Network
 
-##### Why is my host name wrong at the Terminal prompt when connected to a public WiFi network?
+## Why is my host name wrong at the Terminal prompt when connected to a public WiFi network?
 
 Type in Terminal:
 
@@ -20,7 +20,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 That should do it. In short, the Mac will pick up a host name from the DHCP server. This does not affect your computer's name as you have assigned it. This will only affect what you see at the command prompt.
 
 
-### nmap
+## nmap
 
 Scan local network
 
@@ -32,7 +32,7 @@ brew install nmap
 nmap -sn 192.168.1.0/24
 ```
 
-### Wifi
+## Wifi
 
 Turn on Wi-Fi Adapter
 
@@ -77,7 +77,7 @@ sudo route add default gw [GW] eth0
 networksetup -setdnsservers en0 [dns1] [dns2]
 ```
 
-### MAC Spoof
+## MAC Spoof
 
 ```bash
 # Source : https://github.com/feross/spoof
