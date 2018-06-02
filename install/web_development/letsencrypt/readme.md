@@ -79,4 +79,4 @@ openssl s_client -crlf -servername zone.domain.tld -connect zone.domain.tld:443
 
 4. Still not good?
 
-Then you have to look for a cache between the server and the browser. Or... force reload Apache as it happened to me twice.
+Then Apache is not using the conf file you read. So reload Apache `systemctl reload apache2`.
