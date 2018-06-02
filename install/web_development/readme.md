@@ -7,5 +7,4 @@
 5. [MySQL](mysql/)
 6. [DNSMasq](dnsmasq/)
 7. [Apps](apps/)
-
-
+8. [Let's Encrypt](letsencrypt/)
