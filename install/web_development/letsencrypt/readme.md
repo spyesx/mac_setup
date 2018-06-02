@@ -53,3 +53,30 @@ certbot delete --cert-name zone.domain.tld
 ```bash
 certbot certificates
 ```
+## Verifications
+
+1. VHost : What is the certificate used?
+
+```bash
+grep -i sslcertificatefile /etc/apache2/sites-enabled/zone.domain.tld_ssl.conf 
+
+# SSLCertificateFile /etc/letsencrypt/live/zone.domain.tld/cert.pem
+```
+
+2. Check the certificate
+
+```bash
+openssl x509 -in /etc/letsencrypt/live/zone.domain.tld/fullchain.pem -noout -text |grep -i issuer
+
+# Issuer: C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
+```
+
+3. Test the certificate from the web (not from the server).
+
+```bash
+openssl s_client -crlf -servername zone.domain.tld -connect IP:443
+```
+
+4. Still not good?
+
+Then you have to look for a cache between the server and the browser. Or... force reload Apache as it happened to me twice.
