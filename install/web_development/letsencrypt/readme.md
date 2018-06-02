@@ -71,10 +71,10 @@ openssl x509 -in /etc/letsencrypt/live/zone.domain.tld/fullchain.pem -noout -tex
 # Issuer: C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
 ```
 
-3. Test the certificate from the web (not from the server).
+3. Test the certificate from the web
 
 ```bash
-openssl s_client -crlf -servername zone.domain.tld -connect IP:443
+openssl s_client -crlf -servername zone.domain.tld -connect zone.domain.tld:443
 ```
 
 4. Still not good?
