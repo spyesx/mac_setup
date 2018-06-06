@@ -23,3 +23,6 @@ caskroom/cask/virtualbox
 mas install 507257563
 ```
 
+## Sublime Text
+
+Read the [Sublime Text configuration](sublimetext3/)
