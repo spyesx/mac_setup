@@ -24,7 +24,7 @@ I use a slightly different [color scheme](Material-Theme.tmTheme).
 ## Add CLI shortcut
 
 ```bash
-ln -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' /usr/local/bin/subl
+ln -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' /usr/local/bin/sublime
 ```
 
 Open the current folder
