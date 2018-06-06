@@ -53,7 +53,7 @@ openssl x509 -req -in spyesx.localdev-crt.pem -CA rootCA-crt.pem -CAkey rootCA-k
 
 ## Use the certificate in an Apache VHOST
 
-Example for your VHOST configuration. Note the location of all files. 
+Example for your VHOST configuration. Note the location of all files.
 
 ```bash
 
@@ -62,7 +62,7 @@ Example for your VHOST configuration. Note the location of all files.
 	ServerName spyesx.localdev
 	UseCanonicalName Off
 	#Header always set Strict-Transport-Security "max-age=0; includeSubdomains;"
-	
+
 	<Directory "/Users/spyesx/www/spyesx">
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All

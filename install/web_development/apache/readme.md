@@ -1,4 +1,4 @@
-# Apache 
+# Apache
 
 ## Remove Apache from macOS
 
@@ -42,9 +42,9 @@ ps -aef | grep httpd
 Use `apachectl` command to control Apache:
 
 ```bash
-$ sudo apachectl start
-$ sudo apachectl stop
-$ sudo apachectl -k restart
+sudo apachectl start
+sudo apachectl stop
+sudo apachectl -k restart
 ```
 
 Read logs
@@ -74,4 +74,3 @@ Please read [vhost](vhost.md) for details.
 ## SSL
 
 Please read [SSL](ssl.md) for details.
-
