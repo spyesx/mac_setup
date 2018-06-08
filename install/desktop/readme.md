@@ -162,6 +162,7 @@ mas install 409789998
 * [Disk Inventory X](http://www.derlien.com/)
 * [On the job](https://stuntsoftware.com/onthejob/)
 * [Pocket](https://getpocket.com)
+* [Numi](https://numi.io/)
 
 ```bash
 # Install Pocket
