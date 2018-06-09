@@ -157,12 +157,13 @@ mas install 409789998
 
 ## Productivity
 
-* [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207)
-* [Teamviewer](https://www.teamviewer.com/en/download/mac/)
-* [Disk Inventory X](http://www.derlien.com/)
-* [On the job](https://stuntsoftware.com/onthejob/)
-* [Pocket](https://getpocket.com)
-* [Numi](https://numi.io/)
+* [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207), limit your bandwidth.
+* [Teamviewer](https://www.teamviewer.com/en/download/mac/), control computers remotely.
+* [Disk Inventory X](http://www.derlien.com/), list what's on your disk.
+* [On the job](https://stuntsoftware.com/onthejob/), timesheets.
+* [Pocket](https://getpocket.com), read it later.
+* [Numi](https://numi.io/), multi purpose calculator.
+* [Moom](https://manytricks.com/moom/), screen layouts for macOS.
 
 ```bash
 # Install Pocket
