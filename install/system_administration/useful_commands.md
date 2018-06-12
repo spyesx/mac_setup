@@ -176,6 +176,29 @@ compgen -A
 # function -abck will list all the above in one go.
 compgen -A
 ```
+### Shutdown casuses
+
+```bash
+log show --predicate 'eventMessage contains "Previous shutdown cause"' --last 24h
+```
+Causes codes can be found on [georgegarside.com](https://georgegarside.com/blog/macos/shutdown-causes/)
+
+There is also `autopoweroff` to cause a shutdown.
+
+To know if it's your case
+
+```bash
+pmset -g
+```
+
+To set it off
+
+```bash
+sudo pmset -a autopoweroff 0
+```
+
+Also available from the UI side : `System Preferences > Security & Privacy > Advanced`.
+
 
 
 
