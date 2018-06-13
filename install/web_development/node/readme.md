@@ -31,3 +31,28 @@ npm list -g --depth 0
 ├── svg-sprite
 └── vtop
 ```
+## NPM
+
+```
+npm outdated
+npm update
+npm audit
+npm install
+```
+
+```
+retire
+```
+
+```
+npm install node-check-updates
+
+# Upgrade and overwrite package file
+ncu -u
+
+# Upgrade all 
+ncu -a
+
+# Check only dependencies (not devDependencies)
+ncu -p
+```
