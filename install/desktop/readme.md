@@ -155,6 +155,12 @@ mas install 409789998
 
 * [VirtualDJ](http://www.virtualdj.com/)
 
+Record sound from the mycrophone
+
+```bash
+sox -d recording.wav
+```
+
 ## Productivity
 
 * [Network Link Conditioner](https://developer.apple.com/downloads/?name=Hardware%20IO%20Tools%20for%20Xcode%207), limit your bandwidth.
