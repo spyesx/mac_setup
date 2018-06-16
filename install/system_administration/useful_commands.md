@@ -176,6 +176,7 @@ compgen -A
 # function -abck will list all the above in one go.
 compgen -A
 ```
+
 ### Shutdown casuses
 
 ```bash
