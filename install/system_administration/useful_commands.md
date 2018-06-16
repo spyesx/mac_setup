@@ -1,7 +1,12 @@
 # Useful commands
 
+Count elements in a folder
 
-### System load
+```bash
+ls -1 | wc -l
+```
+
+## System load
 
 Brut loadaverage
 
@@ -30,7 +35,7 @@ vmstat 1
 ```
 
 
-### Screen
+## Screen
 
 Share a terminal session with another user: [Source](http://wiki.networksecuritytoolkit.org/index.php/HowTo_Share_A_Terminal_Session_Using_Screen)
 
@@ -177,7 +182,7 @@ compgen -A
 compgen -A
 ```
 
-### Shutdown casuses
+## Shutdown casuses
 
 ```bash
 log show --predicate 'eventMessage contains "Previous shutdown cause"' --last 24h
