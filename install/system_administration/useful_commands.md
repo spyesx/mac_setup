@@ -6,6 +6,14 @@ Count elements in a folder
 ls -1 | wc -l
 ```
 
+Rename files recursively
+
+```bash
+brew install rename
+
+rename -v -f "s/\.txt/\.md/g" ./**/*
+```
+
 ## System load
 
 Brut loadaverage
