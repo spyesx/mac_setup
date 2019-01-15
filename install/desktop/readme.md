@@ -91,7 +91,8 @@ winetricks \
 youtube-dl \
 yujitach-menumeters \
 caskroom/cask/veracrypt \
-rsync 
+rsync \
+coreutils
 ```
 
 ```bash
