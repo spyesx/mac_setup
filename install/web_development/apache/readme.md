@@ -74,3 +74,13 @@ Please read [vhost](vhost.md) for details.
 ## SSL
 
 Please read [SSL](ssl.md) for details.
+
+## mod_evasive
+
+A quick command to find which website was the target of a DDoS attack from a given IP address.
+
+```
+grep -Hoc --color=auto "66.249.66.143" ./*access.log | grep -v ":0"
+```
+
+`66.249.66.143` is a Google Bot IP being naughty.
