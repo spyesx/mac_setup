@@ -50,7 +50,8 @@ evernote \
 spotify \
 cleanmymac \
 synergy \
-whatsapp
+whatsapp \
+dozer
 ```
 
 ## Plugins
