@@ -37,7 +37,7 @@ google-chrome \
 google-chrome-canary \
 firefox \
 flux \
-spectacle \
+rectangle \
 vlc \
 magicprefs \
 slack \
