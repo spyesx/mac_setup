@@ -51,7 +51,8 @@ spotify \
 cleanmymac \
 synergy \
 whatsapp \
-dozer
+dozer \
+zettlr pandoc mactex
 ```
 
 ## Plugins
