@@ -52,7 +52,7 @@ cleanmymac \
 synergy \
 whatsapp \
 dozer \
-zettlr pandoc mactex
+wakeonlan
 ```
 
 ## Plugins
