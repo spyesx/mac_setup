@@ -1,7 +1,7 @@
 
 # Development apps
 
-## Web development apps
+## Installation
 
 ```bash
 brew cask install \
@@ -13,16 +13,7 @@ brackets \
 filezilla \
 bittorrent \
 audacity \
-caskroom/cask/virtualbox \
-visual-studio-code \
-
-```
-
-## Install fonts
-
-```bash
-brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+caskroom/cask/virtualbox 
 ```
 
 [Sip Color picker](http://sipapp.io/)
@@ -31,3 +22,18 @@ brew cask install font-fira-code
 # Install Sip
 mas install 507257563
 ```
+
+## Fira Code font
+
+[Fira Code](https://github.com/tonsky/FiraCode) font is a monospaced font with programming ligatures.
+
+```bash
+brew tap caskroom/fonts
+brew cask install font-fira-code
+```
+
+Some help can be found on their [wiki](https://github.com/tonsky/FiraCode/wiki) if you need to enable ligatures in your favourite editor.
+
+## Sublime Text
+
+Read the [Sublime Text configuration](sublimetext3/)

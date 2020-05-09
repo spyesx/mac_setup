@@ -1,4 +1,4 @@
-# Apache 
+# Apache
 
 ## Remove Apache from macOS
 
@@ -42,9 +42,9 @@ ps -aef | grep httpd
 Use `apachectl` command to control Apache:
 
 ```bash
-$ sudo apachectl start
-$ sudo apachectl stop
-$ sudo apachectl -k restart
+sudo apachectl start
+sudo apachectl stop
+sudo apachectl -k restart
 ```
 
 Read logs
@@ -75,3 +75,12 @@ Please read [vhost](vhost.md) for details.
 
 Please read [SSL](ssl.md) for details.
 
+## mod_evasive
+
+A quick command to find which website was the target of a DDoS attack from a given IP address.
+
+```
+grep -Hoc --color=auto "66.249.66.143" ./*access.log | grep -v ":0"
+```
+
+`66.249.66.143` is a Google Bot IP being naughty.

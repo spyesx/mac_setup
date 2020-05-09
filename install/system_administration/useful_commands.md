@@ -1,7 +1,20 @@
 # Useful commands
 
+Count elements in a folder
 
-### System load
+```bash
+ls -1 | wc -l
+```
+
+Rename files recursively
+
+```bash
+brew install rename
+
+rename -v -f "s/\.txt/\.md/g" ./**/*
+```
+
+## System load
 
 Brut loadaverage
 
@@ -30,7 +43,7 @@ vmstat 1
 ```
 
 
-### Screen
+## Screen
 
 Share a terminal session with another user: [Source](http://wiki.networksecuritytoolkit.org/index.php/HowTo_Share_A_Terminal_Session_Using_Screen)
 
@@ -176,6 +189,30 @@ compgen -A
 # function -abck will list all the above in one go.
 compgen -A
 ```
+
+## Shutdown casuses
+
+```bash
+log show --predicate 'eventMessage contains "Previous shutdown cause"' --last 24h
+```
+Causes codes can be found on [georgegarside.com](https://georgegarside.com/blog/macos/shutdown-causes/)
+
+There is also `autopoweroff` to cause a shutdown.
+
+To know if it's your case
+
+```bash
+pmset -g
+```
+
+To set it off
+
+```bash
+sudo pmset -a autopoweroff 0
+```
+
+Also available from the UI side : `System Preferences > Security & Privacy > Advanced`.
+
 
 
 

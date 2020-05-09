@@ -52,6 +52,9 @@ sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 # Set audio volume
 osascript -e 'set volume 4'
 
+# Set microphone volume
+sudo osascript -e "set volume input volume 80"
+
 # Disable Sudden Motion Sensor. (Why would we keep it on a SSD?)
 sudo pmset -a sms 0
 
