@@ -91,3 +91,20 @@ spoof set 00:00:00:00:00:00 wi-fi
 
 spoof reset wi-fi
 ```
+
+## Wake-on-lan
+
+```bash
+brew install wakeonlan
+
+wakeonelan <MAC_ADDRESS>
+```
+
+## DNS top
+
+```bash
+brew install dnstop
+
+dnstop en0
+```
+
