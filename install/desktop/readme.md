@@ -11,8 +11,8 @@ caskroom/cask/brew-cask
 brew untap caskroom/cask/
 brew install caskroom/cask/xquartz
 brew install Caskroom/cask/synergy
-
 ```
+
 ### Install fonts & beta versions
 
 ```bash
@@ -21,8 +21,8 @@ brew tap caskroom/fonts
 
 # add dev/beta versions
 brew tap caskroom/versions
-
 ```
+
 ## Install apps
 
 * [Smooth Cursor](https://smoothcursor.com/)
@@ -91,7 +91,7 @@ winetricks \
 youtube-dl \
 yujitach-menumeters \
 caskroom/cask/veracrypt \
-rsync 
+rsync
 ```
 
 ```bash
@@ -105,7 +105,7 @@ mas install 1295203466
 
 ### Bluestack
 
-http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac
+<http://blog.weinto.com/osx/how-to-use-android-apps-on-a-mac>
 
 ## Communication
 
@@ -142,13 +142,13 @@ mas install 409789998
 * Axure
 * Freemind
 * [Sketch](https://www.sketchapp.com/)
-	* [Runner](http://sketchrunner.com/)
-	* [Craft](https://www.invisionapp.com/craft)
-	* [Reduce](https://flawlessapp.io/reduce)
-	* [Flinto](https://www.flinto.com)
-	* [Principle](http://principleformac.com/)
-	* [Framer](https://framer.com/)
-	* [Content generator](https://github.com/timuric/content-generator-sketch-plugin)
+* [Runner](http://sketchrunner.com/)
+  * [Craft](https://www.invisionapp.com/craft)
+  * [Reduce](https://flawlessapp.io/reduce)
+  * [Flinto](https://www.flinto.com)
+  * [Principle](http://principleformac.com/)
+  * [Framer](https://framer.com/)
+  * [Content generator](https://github.com/timuric/content-generator-sketch-plugin)
 * Omnigraffle
 
 ## Sound
@@ -180,6 +180,14 @@ mas install 585829637
 ```bash
 # Install Trello
 mas install 1278508951
+```
+
+* [Menu World Time](https://apps.apple.com/us/app/menu-world-time/id1446377255)
+
+```console
+# Install Menu World Time
+$ mas install 1446377255
+>
 ```
 
 ## Create local apps for websites
