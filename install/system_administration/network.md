@@ -108,3 +108,10 @@ brew install dnstop
 dnstop en0
 ```
 
+## BMON
+
+```bash
+brew install bmon
+
+bmon
+```
