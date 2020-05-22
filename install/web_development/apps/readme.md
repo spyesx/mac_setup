@@ -5,6 +5,7 @@
 
 ```bash
 brew cask install \
+chromium \
 dash \
 sourcetree \
 sublime-text \
